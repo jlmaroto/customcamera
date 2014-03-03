@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:rim="http://www.blackberry.com/ns/widgets"
+	id="com.peanutbuttercolective.custom-camera"
+	version="0.0.1">
+
+<name>Custom Camera</name>
+<description>PhoneGap plugin to support a custom camera overlay and camera roll picker</description>
+<author>Jose Luis Maroto</author>
+
+<info>
+	This plugin was written with the tutorial found at:
+	http://codrspace.com/vote539/writing-a-custom-camera-plugin-for-phonegap/
+</info>
+
+<js-module src="www/js/custom_camera.js" name="CustomCamera">
+	<clobbers target="navigator.CustomCamera" />
+</js-module>
+
+<engines>
+	<engine name="cordova" version=">=3.1.0" />
+</engines>
+
+<platform name="ios">
+
+	<!-- config file -->
+	<config-file target="config.xml" parent="/*">
+		<feature name="CustomCamera">
+			<param name="ios-package" value="CustomCamera" />
+		</feature>
+	</config-file>
+
+	<!-- core CustomCamera header and source files -->
+	<header-file src="platforms/ios/Classes/CustomCamera.h" />
+	<header-file src="platforms/ios/Classes/CustomCameraViewController.h" />
+	<source-file src="platforms/ios/Classes/CustomCamera.m" />
+	<source-file src="platforms/ios/Classes/CustomCameraViewController.m" />
+	<resource-file src="platforms/ios/Classes/CustomCameraViewController.xib" />
+	<resource-file src="platforms/ios/Classes/Resources/cameraButton@2x.png" />
+	<resource-file src="platforms/ios/Classes/Resources/changeCamera@2x.png" />
+        <resource-file src="platforms/ios/Classes/Resources/flash-auto@2x.png" />
+        <resource-file src="platforms/ios/Classes/Resources/flash-no@2x.png" />
+        <resource-file src="platforms/ios/Classes/Resources/flash@2x.png" />
+        <resource-file src="platforms/ios/Classes/Resources/fotos@2x.png" />
+        <resource-file src="platforms/ios/Classes/Resources/skip@2x.png" />
+
+</platform>
+
+</plugin>
