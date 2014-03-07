@@ -38,6 +38,7 @@
     
     // Hide the picker view
     [self.viewController dismissModalViewControllerAnimated:YES];
+    self.overlay=nil;
 }
 
 @end

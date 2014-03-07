@@ -148,7 +148,9 @@
     
     
    	// Tell the plugin class that we're finished processing the image
-	[self.plugin capturedImageWithPath:result];
+	self.hasPendingOperation=NO;
+    self.cameraPicker=nil;
+    [self.plugin capturedImageWithPath:result];
 }
 
 
@@ -164,6 +166,8 @@
 - (IBAction)skipImage:(id)sender {
 CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"no image selected"];   // error callback expects string ATM
 [self.plugin capturedImageWithPath:result];
+    self.hasPendingOperation = NO;
+    self.cameraPicker = nil;
 }
 
 

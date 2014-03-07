@@ -24,5 +24,5 @@
 @property (strong, nonatomic) CustomCamera* plugin;
 @property (strong, nonatomic) UIImagePickerController* cameraPicker;
 @property (weak, nonatomic) IBOutlet UIButton *fotos;
-
+@property (readwrite, assign) BOOL hasPendingOperation;
 @end
