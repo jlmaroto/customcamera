@@ -164,10 +164,10 @@
     }
 }
 - (IBAction)skipImage:(id)sender {
-CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"no image selected"];   // error callback expects string ATM
-[self.plugin capturedImageWithPath:result];
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"no image selected"];   // error callback expects string ATM
     self.hasPendingOperation = NO;
     self.cameraPicker = nil;
+    [self.plugin capturedImageWithPath:result];
 }
 
 
