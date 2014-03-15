@@ -21,6 +21,7 @@
 // Declare some properties (to be explained soon)
 @property (weak, nonatomic) IBOutlet UIImageView *ImageView;
 @property (weak, nonatomic) IBOutlet UIButton *flashButton;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (strong, nonatomic) CustomCamera* plugin;
 @property (strong, nonatomic) UIImagePickerController* cameraPicker;
 @property (weak, nonatomic) IBOutlet UIButton *fotos;

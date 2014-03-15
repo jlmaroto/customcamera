@@ -38,6 +38,7 @@
 	<source-file src="platforms/ios/Classes/CustomCameraViewController.m" />
 	<resource-file src="platforms/ios/Classes/CustomCameraViewController.xib" />
 	<resource-file src="platforms/ios/Classes/Resources/cameraButton@2x.png" />
+	<resource-file src="platforms/ios/Classes/Resources/close@2x.png" />
 	<resource-file src="platforms/ios/Classes/Resources/changeCamera@2x.png" />
         <resource-file src="platforms/ios/Classes/Resources/flash-auto@2x.png" />
         <resource-file src="platforms/ios/Classes/Resources/flash-no@2x.png" />

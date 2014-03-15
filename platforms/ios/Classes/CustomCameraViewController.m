@@ -164,12 +164,18 @@
     }
 }
 - (IBAction)skipImage:(id)sender {
-    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"no image selected"];   // error callback expects string ATM
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"skip"];   // error callback expects string ATM
     self.hasPendingOperation = NO;
     self.cameraPicker = nil;
     [self.plugin capturedImageWithPath:result];
 }
 
+- (IBAction)closeCamera:(id)sender {
+    CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"close"];   // error callback expects string ATM
+    self.hasPendingOperation = NO;
+    self.cameraPicker = nil;
+    [self.plugin capturedImageWithPath:result];
+}
 
 
 @end
