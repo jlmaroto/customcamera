@@ -26,4 +26,5 @@
 @property (strong, nonatomic) UIImagePickerController* cameraPicker;
 @property (weak, nonatomic) IBOutlet UIButton *fotos;
 @property (readwrite, assign) BOOL hasPendingOperation;
+@property (readwrite, atomic) int cameraFlashMode;
 @end

@@ -26,7 +26,7 @@
 	self.overlay.plugin = self;
     
 	// Display the view.  This will "slide up" a modal view from the bottom of the screen.
-	[self.viewController presentViewController:self.overlay.cameraPicker animated:YES completion:nil];
+	[self.viewController presentViewController:self.overlay.cameraPicker animated:NO completion:nil];
 }
 
 // Method called by the overlay when the image is ready to be sent back to the web view

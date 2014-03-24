@@ -34,7 +34,8 @@
 		self.cameraPicker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
 		self.cameraPicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
 		self.cameraPicker.showsCameraControls = NO;
-        self.cameraPicker.cameraFlashMode=UIImagePickerControllerCameraFlashModeAuto;
+        //self.cameraPicker.cameraFlashMode=UIImagePickerControllerCameraFlashModeAuto;
+        self.cameraPicker.allowsEditing=YES;
 
 		// Make us the delegate for the UIImagePickerController
 		self.cameraPicker.delegate = self;
@@ -48,28 +49,35 @@
 		self.cameraPicker.cameraOverlayView = self.view;
 
 	
-        
+        self.cameraFlashMode =UIImagePickerControllerCameraFlashModeAuto;
 
     }
 	return self;
 }
 - (IBAction)changeFlash:(id)sender {
-    switch (self.cameraPicker.cameraFlashMode) {
+    UIImage *btnImage = [UIImage imageNamed:@"flash.png"];
+    UIImage *btnImage2 = [UIImage imageNamed:@"flash-no.png"];
+    UIImage *btnImage3 = [UIImage imageNamed:@"flash-auto.png"];
+    
+    switch (self.cameraFlashMode) {
         case UIImagePickerControllerCameraFlashModeAuto:
             [self.cameraPicker setCameraFlashMode:UIImagePickerControllerCameraFlashModeOn];
+            self.cameraFlashMode=UIImagePickerControllerCameraFlashModeOn;
             [self.flashButton setTintAdjustmentMode:UIViewTintAdjustmentModeNormal];
-            [self.flashButton setTitle:@"" forState:UIControlStateNormal];
+            [self.flashButton setImage:btnImage forState:UIControlStateNormal];
             break;
         case UIImagePickerControllerCameraFlashModeOn:
             [self.cameraPicker setCameraFlashMode:UIImagePickerControllerCameraFlashModeOff];
+            self.cameraFlashMode=UIImagePickerControllerCameraFlashModeOff;
             [self.flashButton setTintAdjustmentMode:UIViewTintAdjustmentModeDimmed];
-            [self.flashButton setTitle:@"NO" forState:UIControlStateNormal];
+            [self.flashButton setImage:btnImage2 forState:UIControlStateNormal];
             break;
         case UIImagePickerControllerCameraFlashModeOff:
         default:
             [self.cameraPicker setCameraFlashMode:UIImagePickerControllerCameraFlashModeAuto];
+            self.cameraFlashMode=UIImagePickerControllerCameraFlashModeAuto;
             [self.flashButton setTintAdjustmentMode:UIViewTintAdjustmentModeNormal];
-            [self.flashButton setTitle:@"A" forState:UIControlStateNormal];
+            [self.flashButton setImage:btnImage3 forState:UIControlStateNormal];
             break;
             
             break;
